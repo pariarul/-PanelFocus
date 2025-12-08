@@ -6,10 +6,11 @@ import CaseStudiesPage from "./case-studies/page"
 import ContactPage from "./contact/page"
 import CookieConsent from "@/components/CookieConsent"
 import ServicesPage from "./services/page"
+import Certifications from "@/components/Certifications"
 const page = () => {
   return (
 <>
-    <Navbar />
+   
     <main>
      <Homepage />
      <AboutPage />
@@ -17,8 +18,9 @@ const page = () => {
      <IndustriesPage />
      <CaseStudiesPage />
      <ContactPage />
+     <Certifications />
     </main>
-    <CookieConsent />
+    
 </>
   )
 }

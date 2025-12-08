@@ -1,9 +1,9 @@
 export default function Certifications() {
   const certs = [
-    { name: "ISO 20252 Certified", logo: "/certs/iso20252.png" },
-    { name: "ISO 27001 Certified", logo: "/certs/iso27001.png" },
-    { name: "ESOMAR Member", logo: "/certs/esomar.png" },
-    { name: "GDPR Compliant", logo: "/certs/gdpr.png" },
+    { name: "ISO 20252 Certified", logo: "/Certificats/iso.jpg" },
+    { name: "ISO 27001 Certified", logo: "/Certificats/iso91.jpg" },
+    { name: "ESOMAR Member", logo: "/Certificats/eu-gdpr.jpg" },
+    { name: "GDPR Compliant", logo: "/Certificats/gdpr.jpg" },
   ];
 
   return (
