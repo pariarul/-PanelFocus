@@ -103,164 +103,187 @@ export default function GetQuotePage() {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-6 py-16 mt-10">
-      {/* Header */}
-      <h1 className="text-3xl font-bold text-blue-700 text-center">
-        Get a Free Quote
-      </h1>
-      <p className="text-gray-600 text-center mt-2 mb-10">
-        Fill in your details to become a member of our survey community.
-      </p>
+<section className="w-full max-w-4xl mx-auto px-6 py-16 mt-10">
 
-      <form onSubmit={handleSubmit} className="space-y-8">
+  {/* Header */}
+  <div className="bg-blue-50 p-6 rounded-xl shadow mb-10">
+    <h1 className="text-3xl font-bold text-blue-700 text-center">
+      Get a Free Quote
+    </h1>
+    <p className="text-gray-600 text-center mt-2">
+      Fill in your details to become a member of our survey community.
+    </p>
+  </div>
 
-        {/* PERSONAL INFO */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <InputField label="Full Name" name="fullName" required value={formData.fullName} onChange={handleChange} />
-          <InputField label="Email Address" name="email" type="email" required value={formData.email} onChange={handleChange} />
+  <form
+    onSubmit={handleSubmit}
+    className="space-y-10 bg-white p-8 rounded-2xl shadow-xl border"
+  >
 
-          <InputField label="Mobile Number" name="mobile" type="tel" value={formData.mobile} onChange={handleChange} />
-          <InputField label="Age" name="age" type="number" value={formData.age} onChange={handleChange} />
+    {/* PERSONAL INFO */}
+    <div>
+      <h2 className="text-lg font-semibold text-blue-700 mb-4 border-l-4 border-blue-700 pl-3">
+        Personal Information
+      </h2>
 
-          <InputField label="Birthday" name="birthday" type="date" value={formData.birthday} onChange={handleChange} />
-          <InputField label="Country" name="country" value={formData.country} onChange={handleChange} />
+      <div className="grid md:grid-cols-2 gap-6">
+        <InputField label="Full Name" name="fullName" required value={formData.fullName} onChange={handleChange} />
+        <InputField label="Email Address" name="email" type="email" required value={formData.email} onChange={handleChange} />
 
-          <InputField label="Region / State" name="region" value={formData.region} onChange={handleChange} />
-          <InputField label="City" name="city" value={formData.city} onChange={handleChange} />
+        <InputField label="Mobile Number" name="mobile" type="tel" value={formData.mobile} onChange={handleChange} />
+        <InputField label="Age" name="age" type="number" value={formData.age} onChange={handleChange} />
 
-          <InputField label="Zip Code" name="zip" value={formData.zip} onChange={handleChange} />
-          <InputField label="Languages Spoken" name="languages" value={formData.languages} onChange={handleChange} />
-        </div>
+        <InputField label="Birthday" name="birthday" type="date" value={formData.birthday} onChange={handleChange} />
+        <InputField label="Country" name="country" value={formData.country} onChange={handleChange} />
 
-        {/* SELECT FIELDS */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Gender */}
-          <div>
-            <label className="text-gray-700 font-medium text-sm">Gender *</label>
-            <select
-              name="gender"
-              required
-              value={formData.gender}
-              onChange={handleChange}
-              className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-              <option>Prefer not to say</option>
-            </select>
-          </div>
+        <InputField label="Region / State" name="region" value={formData.region} onChange={handleChange} />
+        <InputField label="City" name="city" value={formData.city} onChange={handleChange} />
 
-          {/* Income */}
-          <div>
-            <label className="text-gray-700 font-medium text-sm">Monthly Income *</label>
-            <select
-              name="income"
-              required
-              value={formData.income}
-              onChange={handleChange}
-              className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select Income</option>
-              <option>Below $500</option>
-              <option>$500 – $1000</option>
-              <option>$1000 – $1500</option>
-              <option>$1500 – $2000</option>
-              <option>$2000 – $2500</option>
-              <option>$2500 – $3000</option>
-              <option>$3000 – $4000</option>
-              <option>$4000 – $5000</option>
-              <option>Above $5000</option>
-            </select>
-          </div>
+        <InputField label="Zip Code" name="zip" value={formData.zip} onChange={handleChange} />
+        <InputField label="Languages Spoken" name="languages" value={formData.languages} onChange={handleChange} />
+      </div>
+    </div>
 
-          {/* Occupation */}
-          <div>
-            <label className="text-gray-700 font-medium text-sm">Occupation *</label>
-            <select
-              name="occupation"
-              required
-              value={formData.occupation}
-              onChange={handleChange}
-              className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select Occupation</option>
-              <option>Full-time</option>
-              <option>Part-time</option>
-              <option>Student</option>
-              <option>Retired</option>
-              <option>Businessman</option>
-              <option>Self-employed</option>
-              <option>Housewife</option>
-              <option>Other</option>
-            </select>
-          </div>
+    {/* SELECT FIELDS */}
+    <div>
+      <h2 className="text-lg font-semibold text-blue-700 mb-4 border-l-4 border-blue-700 pl-3">
+        Professional Details
+      </h2>
 
-          {/* Industry */}
-          <div>
-            <label className="text-gray-700 font-medium text-sm">Industry *</label>
-            <select
-              name="industry"
-              required
-              value={formData.industry}
-              onChange={handleChange}
-              className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select Industry</option>
-              <option>IT</option>
-              <option>Healthcare</option>
-              <option>Education</option>
-              <option>Retail</option>
-              <option>Finance</option>
-              <option>Telecommunications</option>
-              <option>Manufacturing</option>
-              <option>Real Estate</option>
-              <option>Media & Entertainment</option>
-              <option>Travel & Tourism</option>
-              <option>Hospitality</option>
-              <option>Transportation</option>
-              <option>Construction</option>
-              <option>FMCG</option>
-              <option>Automotive</option>
-              <option>Agriculture</option>
-              <option>Government</option>
-              <option>Non-Profit</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Job Title */}
-        <InputField
-          label="Job Title (Optional)"
-          name="jobTitle"
-          value={formData.jobTitle}
-          onChange={handleChange}
-        />
-
-        {/* Checkbox */}
-        <div className="mt-4 flex items-center gap-2">
-          <input
-            type="checkbox"
-            name="isHuman"
-            checked={formData.isHuman}
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Gender */}
+        <div>
+          <label className="text-gray-700 font-medium text-sm">Gender *</label>
+          <select
+            name="gender"
+            required
+            value={formData.gender}
             onChange={handleChange}
-            className="h-4 w-4"
-          />
-          <label className="text-gray-700 text-sm">I am not a robot</label>
+            className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600 hover:border-blue-500 transition"
+          >
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+            <option>Prefer not to say</option>
+          </select>
         </div>
-        {errors.isHuman && (
-          <p className="text-red-500 text-xs -mt-2">{errors.isHuman}</p>
-        )}
 
-        {/* Submit */}
-        <button
-          type="submit"
-          className="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition"
-        >
-          Submit
-        </button>
-      </form>
-    </section>
+        {/* Income */}
+        <div>
+          <label className="text-gray-700 font-medium text-sm">Monthly Income *</label>
+          <select
+            name="income"
+            required
+            value={formData.income}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600 hover:border-blue-500 transition"
+          >
+            <option value="">Select Income</option>
+            <option>Below $500</option>
+            <option>$500 – $1000</option>
+            <option>$1000 – $1500</option>
+            <option>$1500 – $2000</option>
+            <option>$2000 – $2500</option>
+            <option>$2500 – $3000</option>
+            <option>$3000 – $4000</option>
+            <option>$4000 – $5000</option>
+            <option>Above $5000</option>
+          </select>
+        </div>
+
+        {/* Occupation */}
+        <div>
+          <label className="text-gray-700 font-medium text-sm">Occupation *</label>
+          <select
+            name="occupation"
+            required
+            value={formData.occupation}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600 hover:border-blue-500 transition"
+          >
+            <option value="">Select Occupation</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Student</option>
+            <option>Retired</option>
+            <option>Businessman</option>
+            <option>Self-employed</option>
+            <option>Housewife</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        {/* Industry */}
+        <div>
+          <label className="text-gray-700 font-medium text-sm">Industry *</label>
+          <select
+            name="industry"
+            required
+            value={formData.industry}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-4 py-2 mt-1 text-sm focus:ring-2 focus:ring-blue-600 hover:border-blue-500 transition"
+          >
+            <option value="">Select Industry</option>
+            <option>IT</option>
+            <option>Healthcare</option>
+            <option>Education</option>
+            <option>Retail</option>
+            <option>Finance</option>
+            <option>Telecommunications</option>
+            <option>Manufacturing</option>
+            <option>Real Estate</option>
+            <option>Media & Entertainment</option>
+            <option>Travel & Tourism</option>
+            <option>Hospitality</option>
+            <option>Transportation</option>
+            <option>Construction</option>
+            <option>FMCG</option>
+            <option>Automotive</option>
+            <option>Agriculture</option>
+            <option>Government</option>
+            <option>Non-Profit</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    {/* Job Title */}
+    <InputField
+      label="Job Title (Optional)"
+      name="jobTitle"
+      value={formData.jobTitle}
+      onChange={handleChange}
+    />
+
+{/* Checkbox */}
+<div className="mt-4 flex items-center gap-3">
+  <input
+    type="checkbox"
+    name="isHuman"
+    checked={formData.isHuman}
+    onChange={handleChange}
+    className="h-5 w-5 rounded border-gray-300 text-blue-700 focus:ring-blue-700 cursor-pointer"
+  />
+  <label className="text-gray-800 text-sm cursor-pointer">
+    I am not a robot
+  </label>
+</div>
+
+{errors.isHuman && (
+  <p className="text-red-500 text-xs mt-1">{errors.isHuman}</p>
+)}
+
+
+    {/* Submit */}
+    <button
+      type="submit"
+      className="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition shadow-md"
+    >
+      Submit
+    </button>
+  </form>
+</section>
+
   );
 }
