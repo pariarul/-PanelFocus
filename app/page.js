@@ -7,6 +7,8 @@ import ContactPage from "./contact/page"
 import CookieConsent from "@/components/CookieConsent"
 import ServicesPage from "./services/page"
 import Certifications from "@/components/Certifications"
+import PanelBookDownload from "@/components/PanelBookDownload"
+import CTASection from "@/components/CTASection"
 const page = () => {
   return (
 <>
@@ -19,6 +21,8 @@ const page = () => {
      <CaseStudiesPage />
      <ContactPage />
      <Certifications />
+     <PanelBookDownload />
+     <CTASection />
     </main>
     
 </>

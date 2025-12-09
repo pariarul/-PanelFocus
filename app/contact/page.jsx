@@ -98,8 +98,8 @@ export default function ContactPage() {
         <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 -mt-10 relative z-10">
 
           {[
-            { icon: Mail, title: "Email Us", text: "support@panelfocus.com" },
-            { icon: Phone, title: "Call Support", text: "+91 98765 43210" },
+            { icon: Mail, title: "Email Us", text: "info@panelfocus.com" },
+            { icon: Phone, title: "Call Support", text: "+91 99628 33690" },
             { icon: Building2, title: "Our Location", text: "Delhi, India" }
           ].map((item, i) => (
             <div
@@ -133,90 +133,62 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-                    <form className="bg-white p-10 rounded-3xl shadow-xl border border-blue-100 space-y-6 glass-card">
-            <div>
-              <label className="font-medium text-gray-700">Full Name *</label>
-              <input
-                type="text"
-                className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
+<form className="bg-white p-10 rounded-3xl shadow-xl border border-blue-100 space-y-6 glass-card">
 
-            <div>
-              <label className="font-medium text-gray-700">Email Address *</label>
-              <input
-                type="email"
-                className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="example@email.com"
-                required
-              />
-            </div>
+  {/* Full Name */}
+  <div>
+    <label className="font-medium text-gray-700">Full Name *</label>
+    <input
+      type="text"
+      className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+      placeholder="Enter your full name"
+      required
+    />
+  </div>
 
-            <div>
-              <label className="font-medium text-gray-700">Company Name *</label>
-              <input
-                type="text"
-                className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="Enter your company name"
-                required
-              />
-            </div>
+  {/* Email */}
+  <div>
+    <label className="font-medium text-gray-700">Email Address *</label>
+    <input
+      type="email"
+      className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+      placeholder="example@email.com"
+      required
+    />
+  </div>
 
-            <div>
-              <label className="font-medium text-gray-700">Phone Number</label>
-              <input
-                type="text"
-                className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="+91 00000 00000"
-              />
-            </div>
+  {/* Phone */}
+  <div>
+    <label className="font-medium text-gray-700">Phone Number *</label>
+    <input
+      type="text"
+      className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+      placeholder="+91 00000 00000"
+      required
+    />
+  </div>
 
-            {/* ALL SELECT DROPDOWNS */}
-            {[
-              { label: "Project Type *", options: ["Consumer Research", "B2B Research", "Healthcare Research", "Brand Tracking", "UX / Product Testing"] },
-              { label: "Budget Range", options: ["$500 – $2,000", "$2,000 – $5,000", "$5,000 – $10,000", "$10,000+"] },
-              { label: "Project Timeline", options: ["1 Week", "2–3 Weeks", "1 Month", "Custom Timeline"] }
-            ].map((field, index) => (
-              <div key={index}>
-                <label className="font-medium text-gray-700">{field.label}</label>
-                <select className="w-full mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
-                  <option>Select {field.label.toLowerCase()}</option>
-                  {field.options.map((option, i) => (
-                    <option key={i}>{option}</option>
-                  ))}
-                </select>
-              </div>
-            ))}
+  {/* Description */}
+  <div>
+    <label className="font-medium text-gray-700">Project Description *</label>
+    <textarea
+      className="w-full mt-1 p-3 border rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none"
+      placeholder="Describe your project details"
+      required
+    ></textarea>
+  </div>
 
-            <div>
-              <label className="font-medium text-gray-700">Project Details *</label>
-              <textarea
-                className="w-full mt-1 p-3 border rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="Describe your project requirements"
-                required
-              />
-            </div>
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="w-full bg-blue-600 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition font-semibold shadow-md"
+  >
+    Send Request
+  </button>
 
-            <div className="flex items-center gap-3">
-              <input type="checkbox" id="subscribe" />
-              <label htmlFor="subscribe" className="text-gray-700">
-                Subscribe to our newsletter
-              </label>
-            </div>
+</form>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition font-semibold shadow-md"
-            >
-              Send Request <Send size={18} />
-            </button>
 
-            <p className="text-sm text-gray-500 text-center">
-              By submitting this form, you agree to our Privacy Policy and Terms of Service.
-            </p>
-          </form>
         </section>
 
         {/* STATS */}

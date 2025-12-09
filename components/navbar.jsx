@@ -13,7 +13,7 @@ import {
   Phone,
   PhoneCall
 } from "lucide-react";
-import JoinPanelModal from "./JoinPanelModal";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,18 +59,22 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4 ml-110">
 
             {/* Call CTA (Added Phone Icon) */}
-            <button className="flex items-center gap-2 px-4 py-2 border bg-green-600 text-white rounded-lg  transition font-medium">
-              <PhoneCall size={18} />
-              +91 9876543210
-            </button>
+<a
+  href="tel:+919876543210"
+  className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg transition font-medium"
+>
+  <PhoneCall size={18} />
+  +91 9876543210
+</a>
+
 
             {/* Join Panel */}
-            <button
-              onClick={() => setOpenJoinModal(true)}
-              className="px-4 py-2 bg-blue-900 text-white rounded-lg shadow-md hover:scale-105 transform transition"
-            >
-              Join Our Panel
-            </button>
+<Link
+  href="/join-panel"
+  className="px-4 py-2 bg-blue-900 text-white rounded-lg shadow-md hover:scale-105 transform transition"
+>
+  Join Our Panel
+</Link>
 
             {/* Get Quote */}
             <Link
@@ -82,82 +86,85 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Hamburger */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-900 text-white shadow-lg hover:shadow-xl transition transform hover:scale-110 "
-          >
-            {isOpen ? <X size={20} /> : <Menu size={18} />}
-          </button>
+<button
+  onClick={() => setIsOpen(!isOpen)}
+  className="
+    flex items-center justify-center
+    w-12 h-12 rounded-full
+    border border-gray-400/60
+    text-gray-700
+    hover:border-black 
+    hover:text-black
+    transition transform hover:scale-110
+  "
+>
+  {isOpen ? <X size={22} /> : <Menu size={20} />}
+</button>
+
+
 
         </div>
 
-        {/* Mobile Right-Side Slide Menu */}
-        {isOpen && (
-          <div className="fixed inset-0 flex justify-end z-50">
+{/* Black Minimal Slide Menu */}
+{isOpen && (
+  <div className="fixed inset-0 flex justify-end z-50">
 
-            {/* Backdrop */}
-            <div
-              className="flex-1 bg-black/40"
-              onClick={() => setIsOpen(false)}
-            ></div>
+    <div
+      className="flex-1 bg-black/60"
+      onClick={() => setIsOpen(false)}
+    />
 
-            {/* Slide Panel */}
-            <div className="w-64 bg-white shadow-2xl p-6 animate-slideLeft">
+    <div className="w-72 bg-[#0e0e0e] text-white h-full p-6 animate-slideLeft">
 
-              {/* Close Button */}
-              <div className="flex justify-end mb-6">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="text-blue-900 transition"
-                >
-                  <X size={28} />
-                </button>
-              </div>
+      {/* Close */}
+      <div className="flex justify-end mb-6">
+        <button
+          onClick={() => setIsOpen(false)}
+          className="p-2 rounded-full hover:bg-white/10 transition"
+        >
+          <X size={26} />
+        </button>
+      </div>
 
-              {/* Mobile Menu Items */}
-              <div className="flex flex-col gap-4">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 px-4 py-2 rounded-lg text-blue-900 hover:bg-blue-900 hover:text-white transition font-medium"
-                  >
-                    {item.icon}
-                    {item.label}
-                  </Link>
-                ))}
+      {/* Menu */}
+      <div className="flex flex-col gap-4">
+        {menuItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-4 px-4 py-3 rounded-xl
+                       hover:bg-white/10 font-medium"
+          >
+            {item.icon}
+            {item.label}
+          </Link>
+        ))}
+        {/* Join */}
+<Link
+  href="/join-panel"
+  className="px-4 py-2 bg-blue-900 text-white rounded-lg shadow-md hover:scale-105 transform transition"
+>
+  Join Our Panel
+</Link>
 
-                {/* Join Panel CTA */}
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    setOpenJoinModal(true);
-                  }}
-                  className="w-full mt-4 bg-blue-900 text-white py-2 rounded-lg shadow-md hover:scale-105 transform transition"
-                >
-                  Join Our Panel
-                </button>
+        {/* Quote */}
+        <Link
+          href="/get-quote"
+          onClick={() => setIsOpen(false)}
+          className="w-full mt-2 py-3 text-center border border-white rounded-xl
+                     hover:bg-white/10 font-medium"
+        >
+          Get Quote
+        </Link>
+      </div>
 
-                {/* Get Quote */}
-                <Link
-                  href="/get-quote"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full mt-2 text-center py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-100 transition font-medium"
-                >
-                  Get Quote
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+    </div>
+  </div>
+)}
+
       </nav>
 
-      {/* Join Panel Modal */}
-      <JoinPanelModal
-        isOpen={openJoinModal}
-        onClose={() => setOpenJoinModal(false)}
-      />
     </>
   );
 }

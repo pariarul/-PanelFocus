@@ -49,12 +49,13 @@ export default function RotatingGlobe({ textureUrl = "/earth.jpg" }) {
       </mesh>
 
       {/* Points on the globe */}
-      {points.map((p) => (
-        <mesh key={p.id} position={p.position}>
-          <sphereGeometry args={[0.02, 16, 16]} />
-          <meshStandardMaterial color="#ffbb33" />
-        </mesh>
-      ))}
+{points.map((p) => (
+  <mesh key={p.id} position={p.position}>
+    <sphereGeometry args={[0.02, 16, 16]} />
+    <meshStandardMaterial color="#bf130a" />
+  </mesh>
+))}
+
     </group>
   );
 }

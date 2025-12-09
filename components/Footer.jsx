@@ -4,20 +4,33 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white pt-20 pb-10 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+    <footer className="bg-white text-gray-700 pt-20 pb-12 px-6 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
 
-        {/* Logo + Intro */}
+        {/* Logo Section */}
         <div>
-          <h2 className="text-3xl font-extrabold tracking-wide">Panel Focus</h2>
-          <p className="text-sm mt-1 opacity-80">Real People. Trusted Data.</p>
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/logo-removebg-preview.png"
+              alt="Panel Focus Logo"
+              className="h-12 w-auto"
+            />
+            <div className="leading-tight">
+              <h1 className="text-xl font-extrabold text-gray-900">
+                Panel Focus
+              </h1>
+              <p className="text-sm text-blue-600">
+                Real People. Trusted Data.
+              </p>
+            </div>
+          </Link>
 
-          <p className="text-sm mt-4 leading-relaxed opacity-90">
+          <p className="text-sm mt-4 text-gray-500 leading-relaxed">
             Delivering impactful insights through advanced online research
             solutions across 40+ global markets.
           </p>
 
-          <div className="mt-4 space-y-1 text-sm opacity-90">
+          <div className="mt-4 text-sm space-y-1 text-gray-600">
             <p>Email: info@panelfocus.com</p>
             <p>+91 99628 33690</p>
             <p>+91 97118 16414</p>
@@ -26,55 +39,77 @@ export default function Footer() {
 
         {/* Address Section */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">Address</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">Address</h3>
 
-          <p className="text-sm opacity-80 leading-relaxed">
-            <span className="font-semibold text-white">Registered Address:</span><br />
-            Rohini, Delhi - 10085
-          </p>
+          <div className="space-y-3 text-gray-600 text-sm leading-relaxed">
+            <p>
+              <span className="font-semibold text-gray-900">Registered Address:</span><br />
+              Rohini, Delhi - 10085
+            </p>
 
-          <p className="text-sm opacity-80 mt-3 leading-relaxed">
-            <span className="font-semibold text-white">Office Address:</span><br />
-            The Office Pass, 7th Floor,<br />
-            Paras Downtown Center,<br />
-            Sector-54, Gurugram, Haryana - 122003
-          </p>
+            <p>
+              <span className="font-semibold text-gray-900">Office Address:</span><br />
+              The Office Pass, 7th Floor,<br />
+              Paras Downtown Center,<br />
+              Sector-54, Gurugram, Haryana - 122003
+            </p>
+          </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">Quick Links</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">Quick Links</h3>
 
-          <ul className="space-y-2 text-sm opacity-90">
-            <li><Link href="/" className="hover:text-blue-300 transition">Home</Link></li>
-            <li><Link href="/about" className="hover:text-blue-300 transition">About's</Link></li>
-            <li><Link href="/services" className="hover:text-blue-300 transition">Our Services</Link></li>
-            <li><Link href="/industries" className="hover:text-blue-300 transition">Industries</Link></li>
-            <li><Link href="/case-studies" className="hover:text-blue-300 transition">Case Studies</Link></li>
-            <li><Link href="/contact" className="hover:text-blue-300 transition">Contact</Link></li>
+          <ul className="space-y-2 text-sm">
+            {[
+              { name: "Home", href: "/" },
+              { name: "About's", href: "/about" },
+              { name: "Our Services", href: "/services" },
+              { name: "Industries", href: "/industries" },
+              { name: "Case Studies", href: "/case-studies" },
+              { name: "Contact", href: "/contact" }
+            ].map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Industry Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">Industries</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">Industries</h3>
 
-          <ul className="space-y-2 text-sm opacity-90">
-            <li><a className="hover:text-blue-300 transition">Healthcare</a></li>
-            <li><a className="hover:text-blue-300 transition">Technology</a></li>
-            <li><a className="hover:text-blue-300 transition">Retail</a></li>
-            <li><a className="hover:text-blue-300 transition">Financial Services</a></li>
-            <li><a className="hover:text-blue-300 transition">Automotive</a></li>
-            <li><a className="hover:text-blue-300 transition">Media & Entertainment</a></li>
+          <ul className="space-y-2 text-sm text-gray-600">
+            {[
+              "Healthcare",
+              "Technology",
+              "Retail",
+              "Financial Services",
+              "Automotive",
+              "Media & Entertainment"
+            ].map((item) => (
+              <li
+                key={item}
+                className="hover:text-blue-600 transition cursor-pointer"
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 
       </div>
 
-      {/* Newsletter */}
-      <div className="max-w-7xl mx-auto mt-14">
-        <h3 className="text-xl font-semibold mb-2">Newsletter</h3>
-        <p className="text-sm opacity-80 mb-4">
+      {/* Newsletter Section */}
+      <div className="max-w-7xl mx-auto mt-16 bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 className="text-xl font-semibold mb-2 text-gray-900">Newsletter</h3>
+        <p className="text-sm text-gray-500 mb-4">
           Stay updated with the latest market research trends and insights.
         </p>
 
@@ -82,26 +117,27 @@ export default function Footer() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full sm:w-80 px-4 py-3 text-sm rounded-lg bg-white text-blue-900 outline-none placeholder-blue-400"
+            className="w-full sm:w-80 px-4 py-3 text-sm rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button className="bg-blue-600 hover:bg-blue-700 rounded-lg px-8 py-3 text-sm font-semibold transition">
+
+          <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-3 text-sm font-semibold transition">
             Subscribe
           </button>
         </div>
       </div>
 
-      {/* Bottom Strip */}
-      <div className="border-t border-white/20 mt-12 pt-6 text-sm text-center opacity-80">
+      {/* Bottom Section */}
+      <div className="border-t border-gray-200 mt-12 pt-6 text-sm text-center text-gray-500">
         © 2025 Panel Focus. All rights reserved.
 
         <div className="mt-2 flex justify-center gap-3">
-          <Link href="/privacy" className="hover:text-blue-300 transition">
+          <Link href="/privacy" className="hover:text-blue-600 transition">
             Privacy Policy
           </Link>
 
           <span>|</span>
 
-          <Link href="/terms" className="hover:text-blue-300 transition">
+          <Link href="/terms" className="hover:text-blue-600 transition">
             Terms of Service
           </Link>
         </div>

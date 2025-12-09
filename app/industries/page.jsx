@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/components/navbar";
+
 import { CheckCircle, Shield, Globe, BarChart3, Users, Zap } from "lucide-react";
 
 export default function IndustriesPage() {
@@ -105,7 +105,7 @@ export default function IndustriesPage() {
 
   return (
     <>
-    <Navbar />
+
     <main className="min-h-screen bg-white ">
 {/* HERO */}
 <section className="bg-gradient-to-br from-blue-50 to-white py-20 px-6 mt-10">

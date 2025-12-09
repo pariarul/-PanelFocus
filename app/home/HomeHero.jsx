@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import JoinPanelModal from "../../components/JoinPanelModal";
+import Link from "next/link";
 
 const Globe3D = dynamic(() => import("../../components/Globe3D"), {
   ssr: false,
@@ -18,7 +18,7 @@ export default function HomeHero() {
 
           {/* LEFT SECTION */}
           <div className="space-y-6 text-center md:text-left mt-[100px]  ">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-green-600 leading-tight ">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-red-600 leading-tight ">
               Welcome to <span className="text-blue-900">Panel Focus</span>
             </h1>
 
@@ -27,21 +27,23 @@ export default function HomeHero() {
             </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed mx-auto md:mx-0 max-w-xl">
-              Gain trusted, high-quality insights from over 40 countries—fast,
+              Gain trusted, high-quality insights from over 40 countries fast,
               precise, and secure. At Panel Focus, we connect you with verified,
-              hard-to-reach audiences across B2C, B2B, and Healthcare sectors,
+              hard to reach audiences across B2C, B2B, and Healthcare sectors,
               delivering data that empowers confident decisions and drives
               business growth.
             </p>
 
-            <div className="flex justify-center md:justify-start">
-              <button
-                onClick={() => setOpenJoinModal(true)}
-                className="px-5 py-3 bg-blue-900 text-white rounded-lg shadow-md hover:bg-blue-800 transition"
-              >
-                Join Our Panel
-              </button>
-            </div>
+<div className="flex justify-center md:justify-start">
+  <Link
+    href="/join-panel"
+    className="px-5 py-3 bg-blue-900 text-white rounded-lg shadow-md hover:scale-105 hover:bg-blue-800 transform transition block text-center"
+  >
+    Join Our Panel
+  </Link>
+</div>
+
+
           </div>
 
           {/* RIGHT SECTION: 3D GLOBE */}
@@ -51,11 +53,7 @@ export default function HomeHero() {
         </div>
       </section>
 
-      {/* Join Panel Modal */}
-      <JoinPanelModal
-        isOpen={openJoinModal}
-        onClose={() => setOpenJoinModal(false)}
-      />
+
     </>
   );
 }
