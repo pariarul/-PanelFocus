@@ -33,7 +33,7 @@ export default function PanelBookDownload() {
         download
         className="
           mt-6 inline-flex items-center gap-2
-          bg-blue-600 text-white
+          bg-blue-900 text-white
           px-6 py-3 rounded-xl
           hover:bg-blue-700 transition font-semibold shadow-md
         "

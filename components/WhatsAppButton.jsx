@@ -8,8 +8,8 @@ export default function WhatsAppButton() {
         fixed 
         bottom-6 
         left-6 
-        bg-green-500 
-        hover:bg-green-600 
+        bg-blue-900 
+        hover:bg-blue-700 
         text-white 
         p-4 
         rounded-full 

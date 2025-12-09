@@ -19,7 +19,7 @@ export default function Footer() {
               <h1 className="text-xl font-extrabold text-gray-900">
                 Panel Focus
               </h1>
-              <p className="text-sm text-blue-600">
+              <p className="text-sm text-red-600">
                 Real People. Trusted Data.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function Footer() {
             className="w-full sm:w-80 px-4 py-3 text-sm rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-3 text-sm font-semibold transition">
+          <button className="bg-blue-900 hover:bg-blue-700 text-white rounded-lg px-8 py-3 text-sm font-semibold transition">
             Subscribe
           </button>
         </div>

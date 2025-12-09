@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function CTASection() {
   return (
-    <section className="bg-blue-700 text-white py-20 text-center px-6 rounded-3xl shadow-lg">
+    <section className="bg-blue-900 text-white py-20 text-center px-6 rounded-3xl shadow-lg">
       
       <h2 className="text-3xl md:text-4xl font-bold">
         Want Similar Results?
@@ -11,13 +13,20 @@ export default function CTASection() {
       </p>
 
       <div className="mt-8 flex justify-center gap-4 flex-wrap">
-        <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full shadow hover:bg-blue-100 transition">
-          Contact Us
-        </button>
 
-        <button className="px-8 py-3 bg-blue-900 text-white font-semibold rounded-full hover:bg-blue-950 transition">
-          Get a Free Quote
-        </button>
+                  <Link
+              href="/contact"
+              className="px-4 py-2 border border-blue-900 bg-white text-blue-900 hover:bg-blue-700 hover:text-white rounded-full  transition font-medium"
+            >
+              Contact use
+            </Link>
+
+          <Link
+              href="/get-quote"
+              className="px-4 py-2 border border-white bg-blue-900 text-white rounded-full hover:bg-blue-700 transition font-medium"
+            >
+              Get Quote
+            </Link>
       </div>
 
     </section>

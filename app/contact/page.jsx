@@ -1,5 +1,6 @@
 "use client";
 import { Mail, Phone, Building2, Send } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -29,12 +30,16 @@ export default function ContactPage() {
               </p>
 
               <div className="flex gap-4 pt-4">
-                <button className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 shadow-md">
+                <button className="px-6 py-3 bg-blue-900 text-white rounded-full font-semibold hover:bg-blue-700 shadow-md">
                   Contact Support
                 </button>
-                <button className="px-6 py-3 bg-white rounded-full font-semibold border hover:bg-gray-50 shadow-sm">
-                  Request a Quote
-                </button>
+            {/* Get Quote */}
+            <Link
+              href="/get-quote"
+              className="px-4 py-2 border border-blue-900 text-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition font-medium"
+            >
+              Get Quote
+            </Link>
               </div>
             </div>
 
@@ -99,7 +104,7 @@ export default function ContactPage() {
 
           {[
             { icon: Mail, title: "Email Us", text: "info@panelfocus.com" },
-            { icon: Phone, title: "Call Support", text: "+91 99628 33690" },
+            { icon: Phone, title: "Call Support", text: "+91 99628 33690 , +91 97118 16414" },
             { icon: Building2, title: "Our Location", text: "Delhi, India" }
           ].map((item, i) => (
             <div
@@ -107,7 +112,7 @@ export default function ContactPage() {
               className="p-8 bg-white/60 backdrop-blur-xl rounded-3xl shadow-lg border hover:shadow-2xl transition transform hover:-translate-y-1"
             >
               <item.icon className="w-10 h-10 text-blue-700" />
-              <h3 className="mt-4 text-xl font-bold text-gray-900">{item.title}</h3>
+              <h3 className="mt-4 text-xl font-bold text-blue-900">{item.title}</h3>
               <p className="text-gray-600 mt-2">{item.text}</p>
             </div>
           ))}
@@ -118,7 +123,7 @@ export default function ContactPage() {
 
           {/* Left Text */}
           <div className="space-y-6 pt-6">
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-blue-900">
               Send Us a Message
             </h2>
             <p className="text-lg text-gray-600">
@@ -181,7 +186,7 @@ export default function ContactPage() {
   {/* Submit Button */}
   <button
     type="submit"
-    className="w-full bg-blue-600 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition font-semibold shadow-md"
+    className="w-full bg-blue-900 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition font-semibold shadow-md"
   >
     Send Request
   </button>

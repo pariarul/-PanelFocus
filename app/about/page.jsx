@@ -63,12 +63,12 @@ export default function AboutPage() {
               },
               {
                 title: "Secure & Compliant",
-                text: "Fully ESOMAR & GDPR compliant — prioritizing privacy & transparency.",
-                img: "/security.jpg",
+                text: "Fully ESOMAR & GDPR compliant  prioritizing privacy & transparency.",
+                img: "/security.png",
               },
               {
                 title: "24/7 Expert Support",
-                text: "Dedicated project managers offering round-the-clock assistance.",
+                text: "Dedicated project managers offering round the clock assistance.",
                 img: "/support.webp",
               }
             ].map((card, index) => (

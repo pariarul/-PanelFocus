@@ -1,8 +1,8 @@
 export default function Certifications() {
   const certs = [
-    { name: "ISO 27001 Certified", logo: "/Certificats/iso.jpg" },
     { name: "ISO 9001 Certified", logo: "/Certificats/iso91.jpg" },
-    { name: "EU GDPR Compliant", logo: "/Certificats/eu-gdpr.jpg" },
+    { name: "ISO 27001 Certified", logo: "/Certificats/iso.jpg" },
+    { name: "ISO 20252 Certified", logo: "/Certificats/iso20252.jpg" },
     { name: "GDPR Compliant", logo: "/Certificats/gdpr.jpg" },
   ];
 

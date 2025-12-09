@@ -17,7 +17,7 @@ import {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [openJoinModal, setOpenJoinModal] = useState(false);
+
 
   const menuItems = [
     { href: "/", label: "Home", icon: <Home size={20} /> },
@@ -61,10 +61,10 @@ export default function Navbar() {
             {/* Call CTA (Added Phone Icon) */}
 <a
   href="tel:+919876543210"
-  className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg transition font-medium"
+  className="flex items-center gap-2 px-4 py-2 bg-b-600 text-blue-900 rounded-lg transition font-medium"
 >
   <PhoneCall size={18} />
-  +91 9876543210
+  +91 99628 33690
 </a>
 
 
@@ -105,18 +105,20 @@ export default function Navbar() {
 
         </div>
 
-{/* Black Minimal Slide Menu */}
+{/* Single Color Blue Slide Menu */}
 {isOpen && (
   <div className="fixed inset-0 flex justify-end z-50">
 
+    {/* Dim Background */}
     <div
-      className="flex-1 bg-black/60"
+      className="flex-1 bg-black/40 backdrop-blur-sm"
       onClick={() => setIsOpen(false)}
     />
 
-    <div className="w-72 bg-[#0e0e0e] text-white h-full p-6 animate-slideLeft">
+    {/* Slide Menu */}
+    <div className="w-72 bg-blue-900 text-white h-full p-6 shadow-xl animate-slideLeft">
 
-      {/* Close */}
+      {/* Close Btn */}
       <div className="flex justify-end mb-6">
         <button
           onClick={() => setIsOpen(false)}
@@ -126,34 +128,36 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Menu */}
-      <div className="flex flex-col gap-4">
+      {/* Menu Items */}
+      <div className="flex flex-col gap-3">
         {menuItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-4 px-4 py-3 rounded-xl
-                       hover:bg-white/10 font-medium"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg
+                       hover:bg-blue-800 transition font-medium"
           >
             {item.icon}
             {item.label}
           </Link>
         ))}
+
         {/* Join */}
-<Link
-  href="/join-panel"
-  className="px-4 py-2 bg-blue-900 text-white rounded-lg shadow-md hover:scale-105 transform transition"
->
-  Join Our Panel
-</Link>
+        <Link
+          href="/join-panel"
+          className="px-4 py-3 bg-blue-700 hover:bg-blue-600 text-white 
+                     rounded-lg shadow hover:scale-[1.03] transition text-center font-semibold"
+        >
+          Join Our Panel
+        </Link>
 
         {/* Quote */}
         <Link
           href="/get-quote"
           onClick={() => setIsOpen(false)}
-          className="w-full mt-2 py-3 text-center border border-white rounded-xl
-                     hover:bg-white/10 font-medium"
+          className="w-full mt-2 py-3 text-center border border-blue-300 
+                     rounded-lg hover:bg-blue-800/40 transition font-medium"
         >
           Get Quote
         </Link>
@@ -162,6 +166,8 @@ export default function Navbar() {
     </div>
   </div>
 )}
+
+
 
       </nav>
 

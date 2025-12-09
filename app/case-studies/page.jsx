@@ -5,23 +5,7 @@ import { CheckCircle } from "lucide-react";
 
 export default function CaseStudiesPage() {
   const caseStudies = [
-    {
-      slug: "global-healthcare-product-launch",
-      category: "Healthcare",
-      title: "Global Healthcare Product Launch",
-      challenge:
-        "A pharmaceutical company needed insights from 500+ specialists across 15 countries for a new treatment launch.",
-      solution:
-        "Deployed our HCP panel with targeted recruitment of cardiologists and endocrinologists, completing fieldwork in 3 weeks.",
-      metrics: [
-        "500+ qualified HCP responses",
-        "15 countries covered",
-        "3-week turnaround",
-        "95% data quality score",
-      ],
-      impact:
-        "Enabled successful product positioning and go-to-market strategy, resulting in 40% faster market penetration.",
-    },
+ 
     {
       slug: "b2b-saas-ux-study",
       category: "Technology",
@@ -55,6 +39,23 @@ export default function CaseStudiesPage() {
       ],
       impact:
         "Marketing adjustments improved brand equity by 15% across all monitored regions.",
+    },
+       {
+      slug: "global-healthcare-product-launch",
+      category: "Healthcare",
+      title: "Global Healthcare Product Launch",
+      challenge:
+        "A pharmaceutical company needed insights from 500+ specialists across 15 countries for a new treatment launch.",
+      solution:
+        "Deployed our HCP panel with targeted recruitment of cardiologists and endocrinologists, completing fieldwork in 3 weeks.",
+      metrics: [
+        "80+ qualified HCP responses",
+        "5 countries covered",
+        "3-week turnaround",
+        "99.9% data quality score",
+      ],
+      impact:
+        "Enabled successful product positioning and go-to-market strategy, resulting in 40% faster market penetration.",
     },
   ];
 

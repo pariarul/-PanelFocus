@@ -24,7 +24,7 @@ const InputField = ({ label, name, type = "text", value, onChange, required }) =
   </div>
 );
 
-export default function JoinPanelPage() {
+export default function GetQuotePage() {
   const [formData, setFormData] = useState({
     fullName: "",
     age: "",
@@ -106,7 +106,7 @@ export default function JoinPanelPage() {
     <section className="w-full max-w-4xl mx-auto px-6 py-16 mt-10">
       {/* Header */}
       <h1 className="text-3xl font-bold text-blue-700 text-center">
-        Join Our Panel
+        Get a Free Quote
       </h1>
       <p className="text-gray-600 text-center mt-2 mb-10">
         Fill in your details to become a member of our survey community.
