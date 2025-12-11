@@ -29,17 +29,12 @@ export default function AboutPage() {
             <p className="text-gray-700 leading-relaxed text-lg">
               At <strong>Panel Focus (PFR Insights Pvt. Ltd.)</strong>, we empower organizations to make smarter,
               faster, and data-driven decisions through reliable and secure market research solutions.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed text-lg mt-4">
-              Headquartered in Delhi, India, we deliver high-quality insights across <strong>40+ countries</strong>,
+             Headquartered in Delhi, India, we deliver high-quality insights across <strong>40+ countries</strong>,
               supporting top brands, research agencies, and consulting firms.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed text-lg mt-4">
-              With deep expertise in <strong>B2C, B2B, and Healthcare research</strong>, we provide precise,
+               With deep expertise in <strong>B2C, B2B, and Healthcare research</strong>, we provide precise,
               actionable and high-credibility insights tailored for today’s global markets.
             </p>
+
           </div>
         </div>
 
